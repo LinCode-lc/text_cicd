@@ -1,0 +1,12 @@
+version: "3"
+services:
+  cos:
+    build:
+      context: .
+      dockerfile: cos.Dockerfile
+      args:
+        # 此处默认从环境变量中传参
+        - SECRET_ID
+        - SECRET_KEY
+    ports:
+      - 4002:80
